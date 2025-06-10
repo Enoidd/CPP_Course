@@ -84,13 +84,14 @@ int main(){
     int n; // 'n' studenti
 
     cout << "Quanti studenti vuoi inserire? Digita qui il numero: ";
+    cin >> n;
+    
     while(n>30){
         cout << "\nValore non valido.\n";
         cout << "Inserisci un valore minore o uguale a 30: ";
         cin >> n;
     }
-    cin.ignore(); // pulisce il buffer
-
+    cin.ignore();
     vector<Studente> studenti(n); // usa vector (struttura dinamica come std::vector)
     
     for(int i=0; i<n; i++){  // input
