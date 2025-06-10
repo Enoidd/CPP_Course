@@ -20,7 +20,7 @@ USO TIPICO : PARAMETRI DI FUNZIONE
 - SENZA REFERENZA 
 
 void raddoppia(int x){
-	x = x*2; // non modifica l'ordinale.
+	x = x*2; // non modifica l'originale.
 }
 
 - CON REFERENZA 
