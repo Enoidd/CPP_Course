@@ -74,7 +74,7 @@ class Studente{
         void info(vector<Studente> studenti){ // stampa info studenti
 
             for(auto& stud : studenti){
-                cout << "Nome: " << stud.nome << " - " << stud.eta << " - " << stud.media;
+                cout << "\nNome: " << stud.nome << " - Età: " << stud.eta << " - Media: " << stud.media;
             }
         }
 };
