@@ -7,9 +7,15 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
+<<<<<<< HEAD
       "externalConsole": true,
       "cwd": "c:/Users/scard/Desktop/CPP_Course/Lezione 3",
       "program": "c:/Users/scard/Desktop/CPP_Course/Lezione 3/build/Debug/outDebug",
+=======
+      "externalConsole": false,
+      "cwd": "/home/giammaria/Scrivania/CPP_Git/Lezione 1",
+      "program": "/home/giammaria/Scrivania/CPP_Git/Lezione 1/build/Debug/outDebug",
+>>>>>>> 096020b (ffg)
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
