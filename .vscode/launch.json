@@ -1,15 +1,15 @@
 {
   "version": "0.2.0",
-  "configurations": [ 
+  "configurations": [
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/home/giammaria/Scrivania/CPP_Git/Lezione 1",
-      "program": "/home/giammaria/Scrivania/CPP_Git/Lezione 1/build/Debug/outDebug",
+      "externalConsole": true,
+      "cwd": "c:/Users/scard/Desktop/CPP_Course/Lezione 2",
+      "program": "c:/Users/scard/Desktop/CPP_Course/Lezione 2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
