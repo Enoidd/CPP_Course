@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/scard/Desktop/CPP_Course/Lezione 11",
-      "program": "c:/Users/scard/Desktop/CPP_Course/Lezione 11/build/Debug/outDebug",
+      "cwd": "c:/Users/scard/Desktop/CPP_Course/FASE 1/Esercizi Riepilogativi FASE 1/Esercizio3_Cicli_Iterazioni",
+      "program": "c:/Users/scard/Desktop/CPP_Course/FASE 1/Esercizi Riepilogativi FASE 1/Esercizio3_Cicli_Iterazioni/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
