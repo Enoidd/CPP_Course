@@ -1,6 +1,6 @@
 /*
 
-STRUTTURA DI UN PROGRAMMA IN C++:
+STRUTTURA DI UN PROGRAMMA IN C++: 
 
 1. Direttive al preprocessore - #include
 2. Dichiarazioni di spazio dei nomi - using namespace std;
@@ -49,6 +49,7 @@ int main(){
 	cout << "Marco Calli" << endl;
 	cout << "Data di nascita: 04/03/1991" << endl;
 	cout << "In adversa ultra adversa!" << endl << endl;
+	
 	return 0;
 }
 
