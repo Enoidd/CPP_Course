@@ -1,5 +1,4 @@
 /*
-
 Input/Output Avanzato in C++
 
 Nel C++, l’input/output è gestito dalla libreria <iostream>, che mette a disposizione:
