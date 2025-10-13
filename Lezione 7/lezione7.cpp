@@ -11,13 +11,13 @@ oppure
 
 int voti[] = {25, 28, 30};
 
-🔁 Accesso agli elementi
+Accesso agli elementi
 
 Gli elementi si accedono tramite indice (parte da 0):
 
 cout << voti[1]; // stampa 28
 
-🔄 Riempimento con ciclo for
+Riempimento con ciclo for
 
 for (int i = 0; i < 5; i++) {
     cin >> numeri[i];
@@ -26,13 +26,13 @@ for (int i = 0; i < 5; i++) {
 ==============
 
  Operazioni comuni:
-📈 Calcolare la media:
+Calcolare la media:
 
 float somma = 0;
 for (int i = 0; i < 5; i++) somma += numeri[i];
 float media = somma / 5;
 
-🔍 Trovare il massimo:
+Trovare il massimo:
 
 int max = numeri[0];
 for (int i = 1; i < 5; i++)
