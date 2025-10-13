@@ -1,5 +1,4 @@
 /*
-
 FUNZIONI
 
 
@@ -10,17 +9,17 @@ tipo_di_ritorno nome_funzione(parametri) {
     return valore;
 }
 
-✅ Esempio semplice
+Esempio semplice
 
 int somma(int a, int b) {
     return a + b;
 }
 
-🔁 Chiamata della funzione
+Chiamata della funzione
 
 int risultato = somma(4, 5);
 
-🔄 Passaggio di parametri
+Passaggio di parametri
 Tipo	                       Descrizione
 Per valore	                   Copia il valore (modifiche non visibili)
 Per riferimento (&)	           Passa l'indirizzo (modifiche visibili)
@@ -31,7 +30,7 @@ void raddoppia(int &x) {
 
 ==============
 
-🧠 Funzioni void
+Funzioni void
 
 Funzioni che non restituiscono un valore:
 
@@ -41,7 +40,7 @@ void stampaBenvenuto(string nome) {
 
 ==============
 
-📌 Funzioni const
+Funzioni const
 
 int getAnno() const; // usata dentro classi → vedremo dopo nella OOP
 
