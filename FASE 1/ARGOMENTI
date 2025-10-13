@@ -1,0 +1,51 @@
+INDICE Lezione 1 to 7
+
+FASE 1 – Fondamenti del Linguaggio C++ (CPA Level)
+
+Obiettivo: Padroneggiare la sintassi base, logica, flusso di controllo e tipi di dato.
+
+1. Introduzione al C++ e compilazione
+
+Struttura di un programma C++
+
+main(), header , using namespace std
+
+Compilazione, linking, eseguibile
+
+2. Tipi di dati e variabili
+
+Tipi primitivi (int, float, double, char, bool)
+
+Costanti (const, #define)
+
+Conversioni e promozioni
+
+3. Operatori
+
+Aritmetici, Relazionali, Logici
+
+Assegnazione, Incremento/Decremento, Bitwise
+
+4. Input/Output
+
+cin, cout, getline(), printf() (cenni)
+
+5. Controllo di flusso
+
+if, else, else if, switch
+
+while, do-while, for, break, continue
+
+6. Funzioni
+
+Dichiarazione e definizione
+
+Parametri (valore vs riferimento)
+
+Overloading
+
+Funzioni inline e const su funzioni
+
+Esercizi singoli intermedi → dopo ogni argomento
+
+Esercizi cumulativi sezione 1 → logica, funzioni, controllo di flusso
