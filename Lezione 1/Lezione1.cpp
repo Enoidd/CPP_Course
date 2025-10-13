@@ -36,7 +36,7 @@ return 0; indica che il programma è terminato correttamente
 
 */
 
-// ESERCIZIO 1.
+// ESERCIZIO 1
 
 // 1. Stampa il tuo nome completo, data di nascita e frase (senza uso di variabili)
 
