@@ -1,5 +1,4 @@
 /*
-
 TIPI DI DATI E VARIABILI
 
 Una variabile è uno spazio di memoria che ha un nome e può contenere un valore. 
