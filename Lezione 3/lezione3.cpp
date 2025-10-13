@@ -1,5 +1,4 @@
 /*
-
 OPERATORI
 
 Gli operatori permettono di effettuare calcoli, confronti, assegnazioni e manipolazioni sui dati 
