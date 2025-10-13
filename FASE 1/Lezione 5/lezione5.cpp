@@ -33,7 +33,7 @@ switch(voto) {
         cout << "Altro voto";
 }
 
-    ⚠️ Ricorda sempre il break per evitare il "fall through"!
+    Ricorda sempre il break per evitare il "fall through"!
 
 ==============
 

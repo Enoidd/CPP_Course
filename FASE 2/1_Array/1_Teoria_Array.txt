@@ -1,0 +1,87 @@
+Un array Monodimensionale è una collezione di variabili dello stesso tipo che sono indicizzate 
+e memorizzate in posizioni contigue di memoria.
+
+int number[5]; // Array di 5 interi
+
+In C++ gli array sono a dimensione fissa.
+
+======================================================
+DICHIARAZIONE
+
+int a[5]; // Contiene 5 elementi non inizializzati
+
+DICHIARAZIONE CON INIZIALIZZAZIONE
+
+int a[5] = {1,2,3,4,5};
+
+INIZIALIAZZIONE PARZIALE
+
+int a[5] = {1,2}; // gli altri sono inizializzati a 0
+
+INIZIALIAZZIONE AUTOMATICA
+
+int a[]={1,2,3}; // Deducibile la dimensione = 3;
+======================================================
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+RIEMPIMENTO E LETTURA CON I CICLI
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Si può usare: for, while, do-while
+
+INSERIMENTO:
+
+int arr[5];
+for(int i=0; i<5; i++){
+    cout << "Inserisci elemento: " << i+1 << ":";
+    cin >> arr[i];
+}
+
+LETTURA
+
+for(int i=0; i<5; i++){
+    cout << "Elemento: " << i+1 << ":" << arr[i];
+}
+
+@@@@@@@@@@@@@@@@@
+OPERAZIONI COMUNI
+@@@@@@@@@@@@@@@@@
+
+======================================================
+SOMMA DEGLI elementi:
+
+int somma=0;
+for(int i=0; i<5; i++){
+    somma+=arr[i];
+}
+======================================================
+MEDIA degli elementi:
+
+float media = (float)somma/5;
+======================================================
+MASSIMO e MINIMO
+
+int max=arr[0], min=arr[0];
+for(int i=0; i<5; i++){
+    if(arr[i]>max) max=arr[i];
+    if(arr[i]<min) min=arr[i];
+}
+======================================================
+RICERCA di un elemento
+
+int cerca=30;
+bool trovato=false;
+for(int i=0; i<5; i++){
+    if(arr[i]==30){
+        trovato=true;
+        break;
+    }
+}
+
+======================================================
+
+COSE DA SAPERE SUGLI ARRAY:
+
+- Partono da 0
+- Se accesso fuori range comportamento indefinito (bug / crash)
+- Posso passare un array ad una funzione come parametro: void funzione(arr[], int size)

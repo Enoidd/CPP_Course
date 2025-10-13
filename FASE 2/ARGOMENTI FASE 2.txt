@@ -1,0 +1,29 @@
+Argomento 7. Array
+
+    Monodimensionali
+
+    Cicli per riempire e leggere
+
+    Media, massimo, minimo, ricerca
+
+Argomento 8. Stringhe
+
+    char[] vs std::string
+
+    Funzioni classiche (strlen, strcpy, ecc.)
+
+    Metodi della std::string
+
+Argomento 9. Puntatori
+
+    Concetto, dichiarazione, dereferenziazione
+
+    Puntatori e array
+
+Puntatori a funzioni
+
+    Argomento 10. Referenze
+
+    Passaggio per riferimento
+
+    Differenze con puntatori

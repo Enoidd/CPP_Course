@@ -1,0 +1,100 @@
+STRINGHE IN STILE C (char[])
+
+Le stringhe in C sono array di caratteri che terminano con il carattere speciale NULL TERMINATOR \0
+
+========================================
+DICHIARAZIONE E INIZIALIZZAZIONE:
+
+char nome[20] = "Mario";
+
+oppure
+
+char nome[] = {"M","a","r","i","o","\0"};
+
+N.B Se dimentichi "\0" il compilatore non sa dove finisce la stringa e inserisce valori spazzatura
+
+========================================
+INPUT/OUTPUT
+
+char nome[50];
+cin >> nome; // legge fino al primo spazio
+cout << nome;
+
+N.B Per leggere stringhe con + spazi
+
+cin.getline(nome, 30);
+
+========================================
+FUNZIONI STANDARD 'C'
+
+strlen(str) - Lunghezza stringa senza '\0'
+strcpy(destinatario, sorgente) - Copia sorgente in destinatario
+strcat(destinatario, sorgente) - Concatena sorgente alla fine di destinatario
+strcmp(s1, s2) - Confronta due stringhe
+strncpy, strncat, strncmp (varianti limitate)
+
+ESEMPIO:
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main(){
+    char nome1[20]="Mario";
+    char nome2[20];
+
+    strcpy(nome2, nome1);
+    cout << "Copia: " << nome2 << endl;
+    cout << "Lunghezza: " << strlen(nome1) << endl;
+
+    if(strcmp(nome1, nom2)==0)
+        cout << "Sono uguali";
+}
+
+========================================
+
+La libreria <string> è più potente di char[]
+
+@@@@@@@@@@@@@
+DICHIARAZIONE
+@@@@@@@@@@@@@
+
+string nome = "Mario";
+
+@@@@@@@@@@@@
+INPUT/OUTPUT
+@@@@@@@@@@@@
+
+string nome;
+getline(cin, nome); // legge anche gli spazi
+
+========================================
+OPERAZIONI COMUNI
+
+str1 + str2 - concatenazione
+==, !=, <, > - Confronto
+str.length() o str.size() - Lunghezza
+str[i] - Accesso a carattere
+str.substring(posizione, lunghezza) - sottostringa
+str.find("abc") - ricerca
+str.insert(posizione, "Ciao") - Inserimento
+str.erase(posizione, n) - Cancellazione
+str.c_str() - conversione in char[]
+
+ESEMPIO:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+
+    string nome = "Mario";
+    nome += " Rossi";
+    cout << "Nome completo: " << nome << endl; // output: Mario Rossi
+
+    cout << "Lunghezza: " << nome.size() << endl;
+    cout << "Lunghezza: " << nome.length() << endl;
+
+    cout << "Cognome: " << nome.substr(6) << endl; // output: Rossi
+}
