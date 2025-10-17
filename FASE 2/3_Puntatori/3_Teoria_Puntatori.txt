@@ -90,12 +90,31 @@ int* p = &a;
 int** pp = &p; 
 
 // ACCESSO AGLI INDIRIZZI
-cout << "&a:" << &a; // STAMPA: 0x7ffc57f71aa4
-cout << "p:" << p; // STAMPA: 0x7ffc57f71aa4
-cout << "&p:" << &p; // STAMPA: 0x7ffc7834398h
-cout << "pp:" << &pp; // STAMPA: 
+cout << "&a:" << &a; // STAMPA: Indirizzo di memoria di 'a'
+cout << "p:" << p; // STAMPA: Indirizzo di memoria di 'a'
+cout << "&p:" << &p; // STAMPA: Indirizzo di memoria di 'p'
+cout << "pp:" << pp; // STAMPA: Indirizzo di memoria di 'p'
+cout << "pp:" << &pp; // STAMPA: Indirizzo di memoria di 'pp'
 
 // ACCESSO AI VALORI
 cout << "a:" << a; // STAMPA: 10
 cout << "*p:" << *p; // STAMPA: 10
-cout << "**p
+cout << "**pp:" << **pp; // STAMPA: 10
+cout << "*pp:" << *pp; // STAMPA: Indirizzo di memoria di 'p'
+
+========================================
+PUNTATORI e nullptr
+========================================
+
+Un puntatore è una variabile che contiene l'indirizzo di memoria di un altra variabile
+in sostanza contiene dove quel valore si trova in memoria. 
+
+'nullptr' rappresenta nessun indirizzo valido.
+
+ES:
+
+int* puntatore = nullptr; // 'puntatore' non punta a nulla per ora
+
+E' buona pratica inizializzare sempre i puntatori a 'nullptr' se non sono ancora usati.
+
+
