@@ -1,0 +1,101 @@
+Cosa sono i puntatori?
+
+Un puntatore è una variabile che memorizza l'indirizzo di memoria di un altra variabile.
+
+ES:
+
+int x = 30;
+int* puntatore_a_x = &; // puntatore_a_x punta a x, contiene quindi l'indirizzo di memoria di 'x'
+
+
+========================================
+SINTASSI
+========================================
+
+int a = 5;
+int* pA = &a; // pA è un puntatore a int
+cout << *pA; // stampa il valore puntato da pA che sarebbe il contenuto di 'a' (DEFERENZIAZIONE)
+cout << pA; // stampa l'indirizzo di memoria di 'a'
+
+@@@@@@@@@@@@@@@@@@
+DEFERENZIAZIONE
+@@@@@@@@@@@@@@@@@@
+
+Accedere al contenuto dell'indirizzo puntato:
+
+int a = 10;
+int* p = &a;
+*p = 20; // cambia il valore di *a
+
+========================================
+VARIANTE SINTASSI
+========================================
+
+int *pA;
+
+ES:
+
+PREMESSA: 
+
+    - Variabile 'a' ha indirizzo: 0x7ffc57f71aa4
+    - Variabile 'p' ha indirizzo: 0x7fffe0277560
+
+int main(){
+    int a = 5;
+    int* p = &a; // il puntatore 'p' contiene l'indirizzo di memoria di 'a'
+
+    cout << "valore di *p:" << *p; // STAMPA: 5
+    cout << "valore di a:" << a; // STAMPA: 5
+
+    cout << "indirizzo di memoria di a:" << &a; // STAMPA: 0x7ffc57f71aa4
+    cout << "indirizzo di memoria di p:" << p; // STAMPA: 0x7ffc57f71aa4
+
+    cout << "indirizzo di memoria di p:" << &p; // STAMPA: 0x7fffe0277560
+}
+
+========================================
+PUNTATORI E ARRAY
+========================================
+
+int array[5] = {1,2,3};
+int *puntatoreArray = array; // memorizza l'indirizzo della prima cella di memoria dell'array
+
+cout << *(p+3); // STAMPA: 4
+
+----EQUIVALENTE----
+
+array[i] = *(array + i);
+
+========================================
+PUNTATORI E FUNZIONI
+========================================
+
+Passare indirizzi alle funzioni:
+
+void incrementa(int* p){
+    *(p)++;
+}
+
+========================================
+PUNTATORI A PUNTATORI
+========================================
+
+PREMESSA:
+    - Indirizzo di memoria di 'a': 0x7ffc57f71aa4
+    - Indirizzo di memoria di 'p': 0x7ffc7834398h
+    - Indirizzo di memoria di 'pp': 0x7fskdjwe2js
+
+int a = 10; 
+int* p = &a; 
+int** pp = &p; 
+
+// ACCESSO AGLI INDIRIZZI
+cout << "&a:" << &a; // STAMPA: 0x7ffc57f71aa4
+cout << "p:" << p; // STAMPA: 0x7ffc57f71aa4
+cout << "&p:" << &p; // STAMPA: 0x7ffc7834398h
+cout << "pp:" << &pp; // STAMPA: 
+
+// ACCESSO AI VALORI
+cout << "a:" << a; // STAMPA: 10
+cout << "*p:" << *p; // STAMPA: 10
+cout << "**p
