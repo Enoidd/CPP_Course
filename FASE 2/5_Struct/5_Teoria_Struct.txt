@@ -2,7 +2,7 @@
 STRUCT
 ========================================
 
-Una struct è un tipo di dato che consente di raggruppare variabile e permette la non duplicazione delle stesse.
+Una struct è un tipo di dato che consente di raggruppare variabili e permette la non duplicazione delle stesse.
 
 @@@@@@@@@@@@@@@@@@@@@
 SINTASSI
