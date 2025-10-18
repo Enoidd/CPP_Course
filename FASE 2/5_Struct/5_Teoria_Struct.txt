@@ -1,0 +1,165 @@
+========================================
+STRUCT
+========================================
+
+Una struct è un tipo di dato che consente di raggruppare variabile e permette la non duplicazione delle stesse.
+
+@@@@@@@@@@@@@@@@@@@@@
+SINTASSI
+@@@@@@@@@@@@@@@@@@@@@
+
+struct Persona{
+    string nome;
+    int età;
+}
+
+POSSO CREARE OGGETTI/VARIABILI del Tipo 'Persona'
+
+Persona p1;
+p1.nome = "Marco";
+p1.età = 12;
+
+========================================
+
+DIFFERENZE TRA STRUCT E CLASS
+
+STRUCT:
+    - Membri pubblici per default
+    - Usata per dati semplici
+    - Supporta costruttori, metodi, operatori
+
+CLASS:
+    - Membri privati per default
+    - Usata per OOP con metodi, costruttori etc.
+    - Supporta costruttori, metodi, operatori
+
+========================================
+
+DICHIARAZIONE E UTILIZZO BASE
+
+Persona p1;
+p1.nome = "Marco";
+p1.età = 12;
+
+INIZIALIZZAZIONE DIRETTA:
+
+Persona p2 = {"Luca", 13};
+
+========================================
+PASSAGGIO A FUNZIONI
+========================================
+
+PER VALORE (copia)
+
+void stampa(Persona p){
+    cout << p.nome << "," << p.età;
+}
+
+PER RIFERIMENTO 
+
+void stampa (Persona& p){
+    cout << p.nome << ", " << p.età;
+}
+
+========================================
+PUNTATORI E STRUCT
+========================================
+
+Persona p = {"Carlo", 23};
+Persona* ptr = &p; 
+
+cout << ptr->nome; // STAMPA: Carlo
+ptr->età = 34; // MODIFICA DIRETTA
+
+========================================
+STRUCT DENTRO UNA STRUCT
+========================================
+
+Strcut Indirizzo{
+    string via;
+    int numero;
+};
+
+Struct Persona{
+    string nome;
+    Indirizzo indirizzo; // Struct annidata
+};
+
+@@@@@@@@@@@@@@@@@@
+ACCESSO AI VALORI
+@@@@@@@@@@@@@@@@@@
+
+p.nome = "Mario";
+p.età = 23;
+
+p.indirizzo.via = "Via ABBAFATI";
+p.indirizzo.numero = 203;
+
+========================================
+FUNZIONI MEMBRO DENTRO UNA Struct
+========================================
+
+Le struct possono contenere metodi come le classi (OOP):
+
+struct Punto{
+    int x, y;
+
+    void stampa(){
+        cout << "(" << x << ", " << y ")";
+    }
+};
+
+========================================
+COSTRUTTORI IN STRUCT
+========================================
+
+Un Costruttore è una funzione che inizializza automaticamente un oggetto di una classe o struct quando viene creato.
+
+- Ha lo stesso nome della struct
+- Non ha tipo di ritorno
+- Viene chiamato automaticamente quando un oggetto viene creato
+
+struct Punto{
+    int x, y;
+
+    // Costruttore
+    Punto(int a, int b){
+        x = a;
+        y = b;
+    }
+}
+
+int main(){
+
+    Punto p1(3, 5); // In questo punto viene chiamato automaticamente il costruttore
+}
+
+========================================
+USO DI ARRAY E VECTOR
+========================================
+
+struct Studente{
+    string nome;
+    float voti[3];
+};
+
+OPPURE
+
+#include <vector>
+
+struct Studente{
+    string nome;
+    vector<float> voti;
+}
+
+========================================
+MODIFICATORI DI ACCESSO
+========================================
+
+struct Prova{
+    private: 
+        int segreto;
+    public:
+        void set(int x) {segreto = x; }
+        int get() const {return segreto; }
+}

@@ -1,0 +1,58 @@
+========================================
+REFERENZE
+========================================
+
+Una referenza è un alsia (un altro nome) per una variabile esistente.
+Non è un puntatore, una volta inizializzata, la referenza non può essere cambiata per riferirsi a qualcos'altro.
+
+SINTASSI:
+
+int a = 5;
+int& ref = a; // ref è una referenza ad 'a'
+
+// SE CAMBI 'ref' cambi anche 'a'
+
+ref = 10; // anche 'a' diventa '10'
+
+========================================
+USO DELLE REFERENZE
+========================================
+
+COME ALIAS DI UNA VARIABILE
+
+int x = 42;
+int& alis = x;
+
+
+cout << "x: " << x; // STAMPA 42
+cout << "alias: " << alias; // STAMPA 42
+
+alias = 99;
+
+cout << "alias: " << alias; // STAMPA 99
+cout << "x: " << x; // STAMPA 99
+
+========================================
+
+PER PASSAGGIO PER RIFERIMENTO (evita la copia)
+
+void raddoppia(int& y){
+    x = x*2;
+}
+
+========================================
+
+CHIAMATA
+
+int n = 4;
+raddoppia(n);
+
+========================================
+
+REFERENZE COSTANTI
+
+Serve per impedire la copia ma anche impedire modifiche.
+
+void stampa(const int& x){
+    cout << x;
+}
