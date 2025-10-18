@@ -1,0 +1,66 @@
+/*
+Definisci:
+- struct Indirizzo { string via; int numero; string città; }
+- struct Persona { string nome; Indirizzo indirizzo; }
+
+Scrivi una funzione:
+  void aggiornaCitta(Persona& p, string nuovaCitta)
+
+In main():
+- Crea una Persona, inserisci i dati.
+- Chiama la funzione per cambiare città.
+- Stampa il risultato aggiornato.
+*/
+
+
+/*
+Definisci:
+- struct Libro { string titolo; int pagine; }
+
+In main():
+- Alloca dinamicamente un puntatore a Libro
+- Fai inserire titolo e pagine
+- Stampa i dati tramite -> (freccia)
+- Libera la memoria con delete
+*/
+
+
+/*
+Definisci:
+- struct Giocatore { string nome; int punteggio; }
+
+In main():
+- Alloca dinamicamente un array di 3 Giocatore con `new`
+- Fai inserire i dati usando *(p+i) o p[i]
+- Stampa i dati
+- Dealloca la memoria con delete[]
+*/
+
+
+/*
+Definisci:
+- struct Data { int giorno, mese, anno; }
+- struct Documento { string titolo; Data dataScadenza; }
+
+Scrivi:
+- void stampaDocumento(const Documento& d)
+- void aggiornaData(Documento& d, Data nuovaData)
+
+In main():
+- Crea un Documento
+- Chiama entrambe le funzioni
+*/
+
+
+/*
+Definisci:
+- struct Contenitore { string nome; int* dati; int size; }
+
+Scrivi:
+- una funzione void inserisciDati(Contenitore& c) che alloca un array dinamico, chiede i valori e li salva in c.dati
+- una funzione float media(const Contenitore& c) che calcola la media dei valori
+- una funzione void dealloca(Contenitore& c)
+
+In main():
+- Crea un Contenitore, chiama le funzioni, stampa la media
+*/
