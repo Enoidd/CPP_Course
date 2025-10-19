@@ -1,0 +1,158 @@
+========================================
+COSTRUTTORI DI COPIA
+========================================
+
+E' una funzione che viene chiamata automaticamente quando:
+    -un oggetto viene copiato in un altro (Es. Oggetto b = a)
+    -un oggetto viene passato per valore
+    -un oggetto viene ritornato per valore
+
+ES:
+
+Classe(const Classe& altro){
+    // copia i dati da "altro" nell'oggetto corrente
+}
+
+Quando serve?
+
+Serve quando una classe gestisce memoria dinamica (es. con new), altrimenti
+la copia di default può causare lo 'shallow copy', ovvero copia solo i puntatori,
+non i contenuti. Rischio di double delete o corruzione dati.
+
+ES. Teorico base
+
+#include <iostream>
+using namespace std;
+
+class Test{
+    private:
+        int valore;
+
+    public:
+        // Costruttore standard
+        Test(int v){
+            valore = v;
+        }
+
+        // Costruttore di copia
+        Test(const Test& altro){
+            valore = altro.valore;
+            cout<<"Costruttore di copia chiamato"<<endl;
+        }
+
+        void stampa(){
+            cout<<"Valore: "<<valore<<endl;
+        }
+};
+
+int main(){
+
+    Test a(5); // Utilizzo il costruttore parametrico
+    Test b = a; // Costruttore di copia -> copio 'a' dentro 'b'
+
+    b.stampa(); // Stampa: 5
+
+}
+
+========================================
+COSTRUTTORE DI COPIA CON 'new'
+========================================
+
+class MyArray{
+    private: 
+        int* data; // Puntatore int
+
+    public: 
+        // Costruttore parametrico
+        MyArray(int val){
+            data = new int(val); // memoria dinamica
+            /* new int(val) crea dinamicamente una variabile int nel heap
+            il suo indirizzo viene salvato nel puntatore 'data', l'accesso al valore *data è uguale a 10 */
+        }
+
+        // Costruttore di copia profonda
+        MyArray(const MyArray& other){
+            data = new int(*other.data); // nuova allocazione
+            /* other.data è il puntatore dell'oggetto sorgente, *other.data è il valore
+            contenuto in quella memoria. new int(*other.data) crea una nuova area di memoria 
+            e copia solo il valore.
+            
+            -other = sorgente
+            -other.data = 0x1234 indirizzo di memoria sorgente
+            -*other.data = 10 
+            
+            In pratica ha creato una copia di data con due indirizzi diversi, 
+            quindi se ne cancello uno ho l'altro.*/
+        }
+
+        ~MyArray(){
+            delete data;
+        }
+
+        void stampa(){
+            cout<<"Valore: "<<*data<<endl;
+        }
+};
+
+int main(){
+    MyArray a(10);
+    MyArray b = a; // chiama il costruttore di copia profonda
+
+    a.stampa(); // Valore 10
+    b.stampa(); // Valore 10
+
+    return 0;
+}
+
+===============================================
+
+#include <iostream>
+using namespace std;
+
+class MyArray {
+private:
+    int* data;  // ogni oggetto avrà il suo puntatore "data"
+
+public:
+    // Costruttore normale
+    MyArray(int val) {
+        data = new int(val);  // alloca un numero in memoria dinamica
+        cout << "Costruttore: creo valore " << val
+             << " in indirizzo " << data << endl;
+    }
+
+    // Costruttore di copia (deep copy)
+    MyArray(const MyArray& other) {
+        data = new int(*other.data);  // nuova memoria con lo stesso valore
+        cout << "Costruttore di copia: copio valore "
+             << *other.data << " da indirizzo " << other.data
+             << " a nuovo indirizzo " << data << endl;
+    }
+
+    // Distruttore
+    ~MyArray() {
+        cout << "Distruttore: libero memoria in " << data << endl;
+        delete data;
+    }
+
+    // Metodo di stampa per vedere indirizzo e valore
+    void stampa(const string& nome) const {
+        cout << nome << " → indirizzo variabile 'data': " << &data
+             << " | data (puntatore): " << data
+             << " | valore puntato: " << *data << endl;
+    }
+};
+
+int main() {
+    cout << "=== Creo oggetto SORGENTE ===" << endl;
+    MyArray sorgente(10);   // chiama il costruttore normale
+
+    cout << "\n=== Creo DESTINATARIO come copia di SORGENTE ===" << endl;
+    MyArray destinatario = sorgente;  // chiama il costruttore di copia
+
+    cout << "\n=== Stato finale in memoria ===" << endl;
+    sorgente.stampa("Sorgente");
+    destinatario.stampa("Destinatario");
+
+    cout << "\n=== Fine programma: distruttori in azione ===" << endl;
+}
