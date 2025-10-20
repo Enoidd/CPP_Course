@@ -1,0 +1,71 @@
+========================================
+POLIMORFISMO IN ARRAY / VETTORI
+========================================
+
+Il Polimorfimo in Array/Vettori si indica quando vengono salvati oggetti derivati in una collezione
+(es. array) di puntatori alla classe base, e poi vengono chiamati metodi virtuali su questi
+puntatori.
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Animale {
+public:
+    virtual void verso() const = 0; // metodo puro (classe astratta)
+};
+
+class Cane : public Animale {
+public:
+    void verso() const override {
+        cout << "Bau\n";
+    }
+};
+
+class Gatto : public Animale {
+public:
+    void verso() const override {
+        cout << "Miao\n";
+    }
+};
+
+int main() {
+    vector<Animale*> animali;
+
+    animali.push_back(new Cane());
+    animali.push_back(new Gatto());
+
+    for (Animale* a : animali) {
+        a->verso();  // polimorfismo!
+    }
+
+    // Cleanup
+    for (Animale* a : animali) {
+        delete a;
+    }
+
+    return 0;
+}
+
+
+Esercizio 14.5 – Allenamento
+
+🎯 Istruzioni dettagliate:
+
+Crea una classe astratta Forma con metodo virtual puro disegna().
+
+Crea 2 classi derivate:
+
+Cerchio: stampa "Disegno un cerchio".
+
+Quadrato: stampa "Disegno un quadrato".
+
+Nel main():
+
+Crea un vector<Forma*>.
+
+Inserisci oggetti Cerchio e Quadrato.
+
+Cicla e chiama disegna() su ciascuno.
+
+Alla fine, libera la memoria.

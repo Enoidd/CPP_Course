@@ -1,0 +1,65 @@
+========================================
+PUNTATORI A OGGETTI BASE
+========================================
+
+Un puntatore a una classe base può essere usato per puntare a un oggetto derivato. 
+
+    - metodi virtual
+
+PERCHE' UTILE?
+
+-Permette di scrivere codice generico, indipendentemente dalla classe specifica, pur usando
+le classi derivate.
+
+ESEMPIO:
+
+class Animale{
+    public:
+        void verso(){
+            cout<<"Indefinito\n";
+        }
+};
+
+class Cane : public Animale{
+    public:
+        void verso(){
+            cout<<"Bau\n";
+        }
+};
+
+int main(){
+    Animale* ptr;
+    Cane c;
+    ptr = &c;
+
+    ptr->verso(); // Senza virtual stampa "Indefinito"
+
+    /* Viene chiamato il metodo della classe base, anche se ptr punta ad un cane */
+}
+
+ESEMPIO: 
+
+#include <iostream>
+using namespace std;
+
+class Animale{
+    public:
+        void verso(){
+            cout<<"Animale: verso generico\n";
+        }
+};
+
+class Gatto : public Animale{
+    public:
+        void verso(){
+            cout<<"Miao\n";
+        }
+};
+
+int main(){
+    Gatto g;
+    Animale* ptr = &g;
+
+    ptr->verso(); // Invoca il metodo della classe animale e non quella della classe "Gatto"
+}
+

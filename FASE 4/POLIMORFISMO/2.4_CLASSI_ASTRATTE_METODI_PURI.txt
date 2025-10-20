@@ -1,0 +1,72 @@
+========================================
+CLASSI ASTRATTE e metodi virtuali PURI ('=0
+========================================
+
+Una classe astratta è una classe che non può essere istanziata direttamente.
+Serve come modello generale per le classi derivate.
+
+Contiene almeno un metodo virtuale puro, cioè dichiarato con =0
+
+ESEMPIO SINTASSI:
+
+class Forma{
+    public:
+        virtual void disegna() const = 0; // Metodo virtuale puro
+};
+
+
+
+- PERCHE' SI USANO?
+
+    -Obbligano le classi derivate a implementare determinati metodi
+    -Rappresentano concetti astratti (forma, Dispositivo, Animale)
+    -Permettono polimorfismo puro, cioè comportamento dinamico a runtime
+    -Ideali per scrivere codice modulare ed estendibile
+
+DIFFERENZA TRA VIRTUALE E puro
+
+virtual                                     virtual puro =0
+
+-Metodo con implementazione                 Metodo senza implementazione
+-Può essere ridefinito                      Deve essere ridefinito
+-La classe può essere istanziata            La classe non può essere istanziata
+
+ESEMPIO:
+
+#include <iostream>
+using namespace std;
+
+class Forma{
+    public: 
+        virtual void disegna() const = 0; // Metodo virtual puro
+};
+
+class Cerchio : public Forma{
+    public:
+        void disegna() const override{
+            cout<<"Disegno un cerchio\n";
+        }
+};
+
+class Quadrato : public Forma{
+    public: 
+        void disegna() const override{
+            cout<<"Disegno un quadrato\n";
+        }
+};
+
+int main(){
+    Forma f; // Classe astratta NON FUNZIONA
+
+    Cerchio c;
+    Quadrato q;
+
+    Forma* ptr1 = &c;
+    Forma* ptr2 = &q;
+
+    ptr1->disegna(); // Stampa "Disegno un cerchio"
+    ptr2->disegna(); // Stampa "Disegno un quadrato"
+}
+
+
+

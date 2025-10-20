@@ -1,7 +1,7 @@
 # Progetto CPP course
 
 
-🔹 FASE 1 – Fondamenti del Linguaggio C++ (CPA Level)
+FASE 1 – Fondamenti del Linguaggio C++ (CPA Level)
 
 Obiettivo: Padroneggiare la sintassi base, logica, flusso di controllo e tipi di dato.
 
@@ -51,7 +51,7 @@ Esercizi singoli intermedi → dopo ogni argomento
 
 Esercizi cumulativi sezione 1 → logica, funzioni, controllo di flusso
 
-🔹 FASE 2 – Array, Stringhe, Puntatori e Referenze (CPA Level)
+FASE 2 – Array, Stringhe, Puntatori e Referenze (CPA Level)
 7. Array monodimensionali e multidimensionali
 
 Inizializzazione, accesso, manipolazione
@@ -82,7 +82,7 @@ Esercizi avanzati su puntatori e array
 
 Esercizi cumulativi sezione 2 → array, stringhe, puntatori, funzioni con parametri riferiti
 
-🔹 FASE 3 – Programmazione a Oggetti (CPA Level)
+FASE 3 – Programmazione a Oggetti (CPA Level)
 11. Classi e Oggetti
 
 Membri dati, metodi
@@ -117,7 +117,7 @@ Esercizi su OOP complessi
 
 Esercizi cumulativi sezione 3 → modellazione OO, ereditarietà e polimorfismo
 
-🔹 FASE 4 – Memory Management e Avanzati (CPA + Senior)
+FASE 4 – Memory Management e Avanzati (CPA + Senior)
 16. Gestione dinamica della memoria
 
 new, delete, nullptr
@@ -140,7 +140,7 @@ Esercizi su gestione memoria, eccezioni, smart pointers
 
 Esercizi cumulativi sezione 4 → gestione dinamica e OOP con smart pointer
 
-🔹 FASE 5 – C++ Standard Library (STL) e Avanzati Senior
+FASE 5 – C++ Standard Library (STL) e Avanzati Senior
 20. Template
 
 Funzioni e classi template
@@ -167,7 +167,7 @@ Esercizi STL avanzati e uso combinato di container e algoritmi
 
 Esercizi cumulativi sezione 5 → programmazione generica, template, STL, lambda
 
-🔹 FASE 6 – Progetti Finali e Preparazione CPA
+FASE 6 – Progetti Finali e Preparazione CPA
 25. Progetti integrati
 
 Simulatore bancomat
