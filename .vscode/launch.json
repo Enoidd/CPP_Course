@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/scard/Desktop/CPP_Course/FASE 4/POLIMORFISMO/2_ESERCIZI_CLASSE_ASTRATTA",
-      "program": "c:/Users/scard/Desktop/CPP_Course/FASE 4/POLIMORFISMO/2_ESERCIZI_CLASSE_ASTRATTA/build/Debug/outDebug",
+      "cwd": "c:/Users/scard/Desktop/CPP_Course/FASE 2.5 - GESTIONE DINAMICA DELLA MEMORIA",
+      "program": "c:/Users/scard/Desktop/CPP_Course/FASE 2.5 - GESTIONE DINAMICA DELLA MEMORIA/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

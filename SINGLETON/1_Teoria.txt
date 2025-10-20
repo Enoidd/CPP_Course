@@ -1,0 +1,79 @@
+
+
+Singleton è uno dei Design Pattern Creazionali, cioè un modello di progettazione
+che riguarda come creare oggetti nel programma.
+
+FONDAMENTI TEORICI:
+
+I design pattern creazionali sono schemi che risolvono problemi legati alla creazione 
+controllata di oggetti.
+
+Singleton pattern definisce una classe che:
+    - Può essere istanziata una sola volta,
+    - Fornisce un punto di accesso globale a quell'istanza
+
+ESEMPIO:
+
+Gestore dei log deve raccogliere tutti i messaggi dell'applicazione (unica istanza)
+Un gestore di configurazioni globali (lingua, tema, percorsi file etc.) deve essere unico.
+
+===========================
+
+PRINCIPIO DELL'ISTANZA unica
+
+"Tutti i componenti del programma devono usare la stessa istanza in una determinata classe"
+
+COME SI OTTIENE:
+    - Si rende un costruttore privato, così non si può fare new MyClass() liberamente.
+    - Si dichiara una variabile statica interna alla classe che conterrà l'istanza.
+    - Si crea un metodo statico pubblico ( getIstance() ) che:
+        - Controlla se l'istanza esiste ( se non esiste la crea e la restituisce )
+
+    Garantisce controllo e accesso centralizzato.
+
+===========================
+
+STRUTTURA E COMPONENTI DEL Pattern
+
+-COSTRUTTORE PRIVATO
+
+class Singleton{
+    private:
+        Singleton(){} // privato
+};
+
+Solo la classe stessa può creare un oggetto Singleton
+
+-MEMBRO STATICO
+
+static Singleton* istance; 
+
+Essendo static esiste una sola copia in tutto il programma, indipendentemente da 
+quante volte venga usata una classe.
+
+-METODO DI ACCESSO STATICO (getIstance)
+
+public:
+    // Metodo
+    static Singleton* getIstance(){
+        if(istance==nullptr) // non esiste
+            istance = new Singleton(); // creala
+        return istance; // restituiscila
+        // Altrimenti se esiste non fare nulla
+    }
+
+-CONTROLLO DI COPIA E ASSEGNAZIONE
+
+Per evitare la copia dell'istanza es. Singleton s1 = s2; si disabilita il costruttore
+di copia e assegnazione:
+
+Singleton(const Singleton&) = delete;
+Singleton& operator=(const Singleton&) = delete;
+
+VALIDAZIONE PRATICA:
+
+Singleton* s1 = Singleton::getIstance();
+Singleton* s2 = Singleton::getIstance();
+
+if(s1==s2)
+    cout<<"E' la stessa istanza"<<endl; // Output
