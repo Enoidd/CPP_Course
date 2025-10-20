@@ -1,0 +1,23 @@
+========================================
+COSTRUTTORI E DISTRUTTORI IN EREDITARIETA'
+========================================
+
+Il costruttore della classe base viene sempre chiamato prima di quello 
+della derivata.
+
+Il distruttore della derivata viene chiamato prima di quello della classe base.
+
+ESEMPIO:
+
+class Base{
+    public:
+        Base(){ cout<<"Costruttore base\n"};
+        ~Base() cout <<"Distruttore base\n};
+};
+
+class Ereditata : public Base{
+    public:
+        Derivata(){ cout<<"Costruttore derivata\n"};
+        ~Derivata(){ cout<<"Distruttore derivata\n"};
+};
+

@@ -1,0 +1,67 @@
+========================================
+PAROLA CHIAVE 'virtual'
+========================================
+
+Serve per il polimorfismo e permette di usare il metodo corretto
+anche con un puntatore a classe base.
+
+ESEMPIO:
+
+class Animale{ // Classe base
+    public:
+        virtual void verso(){
+            cout<<"Verso indefinito\n";
+        }    
+};
+
+class Cane : public Animale{ // Classe derivata
+    public:
+        void verso() override{
+            cout<<"Bau bau\n";
+        }    
+};
+
+La parola chiave 'virtual' dice al compilatore:
+
+"Se una classe eredita da me e ridefinisce questo metodo, quando
+chiamo 'verso()' su un puntatore o riferimento alla classe base,
+usa la versione più specifica (quella derivata)."
+
+Il comportamento viene deciso a runtime.
+
+========================================
+override
+========================================
+
+Override indica esplicitamente:
+
+"Questo metodo ridefinisce (override) una funzione virtual della classe base."
+
+ESEMPIO COMPLETO:
+
+class Animale{ // Classe Base
+    public:
+        // Metodo verso
+        virtual void verso(){
+            cout<<"Verso indefinito\n";
+        }
+};
+
+class Cane : public Animale{ // Classe derivata
+    public: 
+        void verso() override{  // Ridefinisci 'verso' della classe base con questo specifico per il Cane
+            cout<<"bau bau\n";
+        }
+};
+
+int main(){
+
+    Animale a;
+    Cane c;
+
+    a.verso(); // STAMPA: Verso indefinito
+    c.verso(); // STAMPA: Bau Bau
+
+    Animale* ptr = &c; // Puntatore della classe Base contiene l'indirizzo 'c' della classe derivata
+    ptr->verso(); // STAMPA: Bau bau (grazie a virtual);
+}

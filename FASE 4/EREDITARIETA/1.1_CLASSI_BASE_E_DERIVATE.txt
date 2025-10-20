@@ -1,0 +1,35 @@
+========================================
+CLASSI BASE E DERIVATE
+========================================
+
+Obiettivo: 
+- Come una classe può derivare da un'altra e ottenere i suoi attributi/metodi.
+
+In C++ una classe derivata può ereditare da una classe base, permettendo il riutilizzo del codice.
+
+ESEMPIO:
+
+class Animale{ // Classe base
+    public: 
+
+        void verso(){
+            cout<<"Verso indefinito.\n";
+        }
+
+};
+
+class Cane : public Animale{ // Classe derivata
+    public:
+        void abbaia(){
+            cout<<"Bau bau\n";
+        }
+}
+
+int main(){
+
+    Cane c;
+    c.verso();  // Accesso ereditato
+    c.abbaia(); // Metodo della classe derivata
+}
+
+

@@ -1,0 +1,14 @@
+========================================
+EREDITARIETA' PUBBLICA, PROTETTA, PRIVATA
+========================================
+
+Obiettivo:
+- Comprendere la differenza tra 3 tipi di ereditarietà:
+    - class Derivata : public Base{} ( pubblica )
+    - class Derivata : protected Base{} ( protetta )
+    - class Derivata : private Base{} ( privata )
+
+- Pubblica: i membri public/protected rimangono tali nella Derivata
+- Protected: i membri public/protected diventano protected nella Derivata
+- Private: tutto diventa private
+

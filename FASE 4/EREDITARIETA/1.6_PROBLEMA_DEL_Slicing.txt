@@ -1,0 +1,47 @@
+========================================
+PROBLEMA DEL "slicing"
+========================================
+
+Quando si assegna un oggetto derivato a un oggetto base, le informazioni
+specifiche della derivata vengono perse:
+
+ESEMPIO:
+
+Cane c;
+Animale a = c; // Slicing. L'oggetto 'a' non ha più le info di 'Cane'
+
+ESEMPIO:
+
+#include <iostream>
+using namespace std;
+
+class Animale{ // base
+    public:
+        virtual void verso(){
+            cout<<"Verso indefinito\n";
+        }
+};
+
+class Cane : public Animale{ // derivata
+    public:
+        void verso() override{
+            cout<<"bau bau\n";
+        }
+
+        void scondizola(){
+            cout<<"Scondinzola\n";
+        }
+};
+
+int main(){
+
+    Cane c;
+    Animale* a = &c;
+    a->verso(); // STAMPA "Bau bau"
+
+    Animale a = c; // Slicing
+    a->verso(); // STAMPA "Verso indefinito"
+
+    /* Perché stampa verso indefinito? 
+        - Perché quando assegni un oggetto derivato a una variabile di tipo base 'a' perdo la parte derivata di 'c'
+}
