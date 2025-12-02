@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/scard/Desktop/CPP_Course/02_COSTANTI",
-      "program": "c:/Users/scard/Desktop/CPP_Course/02_COSTANTI/build/Debug/outDebug",
+      "cwd": "c:/Users/scard/Desktop/CPP_Course/03_CONVERSIONI E PROMOZIONI",
+      "program": "c:/Users/scard/Desktop/CPP_Course/03_CONVERSIONI E PROMOZIONI/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

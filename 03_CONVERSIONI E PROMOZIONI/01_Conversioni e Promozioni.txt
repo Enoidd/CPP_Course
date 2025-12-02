@@ -1,0 +1,18 @@
+
+
+Conversione di tipi: Trasformare un valore di un tipo in un altro tipo.
+
+    Es. double d = 3; (3 è un int che viene convertito in 3.0 double)
+
+Promozione: Una conversione particolare che alza il tipo a un tipo più "ampio" senza perdere informazioni.
+
+    Es. char e short diventano in quando vengono usati in un'espressione artimetica
+
+
+N.B
+
+Le conversioni possono essere:
+
+    - IMPLICITE fatte dal compilatore
+    - ESPLICITE quando viene usato un cast o costruttori per cambiare tipo
+
