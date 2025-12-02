@@ -6,12 +6,28 @@
 */
 
 #include <iostream>
-#include <climits> // per INT_MIN, INT_MAX, UINT_MAX, UINT_MIN
+#include <climits> // per INT_MIN, INT_MAX, UINT_MAX
 using namespace std;
 
-int main(){
+/*int main(){
 
     cout << "INT_MIN: "<<INT_MIN<<"\n";
     cout << "INT_MAX: "<<INT_MAX<<"\n";
     cout << "UINT_MAX: "<<UINT_MAX<<"\n";
+}*/
+
+/* Esempio di Overflow (comportamento non definito per signed)*/
+
+int main(){
+
+    int a = 2147483647; // tipicamente INT_MAX per 32 bit
+    cout << "a: " << a <<"\n";
+    a = a+1; // Overflow
+    cout << "a dopo overflow: " << a <<"\n";
 }
+
+/*
+
+Il siultato può essere qualunque ma tipicamente è negativo.
+
+*/
