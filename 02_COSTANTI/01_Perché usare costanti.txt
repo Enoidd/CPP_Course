@@ -1,0 +1,35 @@
+Una costante è un valore che non può cambiare durante l'esecuzione del programma.
+
+Due modi per creare COSTANTI:
+
+    - const -> costanti tipizzate 
+    - #define -> macro del preprocessore
+
+PERCHE' USARE COSTANTI?
+=======================
+
+- Per evitare copia/incolla
+- Codice più leggibile
+- Per evitare che un valore venga modificato
+
+SINTASSI BASE
+=============
+
+const tipo nome = valore;
+
+Es.
+
+const int GIORNI_SETTIMANA = 7;
+const double IVA = 0.22;
+const char LETTERA_INIZIALE = 'G';
+
+CARATTERISTICHE
+===============
+
+Deve essere inizializzata subito, non può essere modificata.
+
+Es. 
+
+const int X = 10;
+X = 20; // Errore di compilazione
+
