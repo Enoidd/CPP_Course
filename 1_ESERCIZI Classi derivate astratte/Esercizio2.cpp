@@ -66,9 +66,9 @@ int main(){
     Dispositivo* d1 = new Stampante("Xerox C7120");
     Dispositivo* d2 = new Scanner("XXXX");
 
-    d1->usa();
-    d2->usa();
+    d1->usa(); // Modello usato: Xerox C7120
+    d2->usa(); // Risoluzione: XXXX
 
-    delete d1;
-    delete d2;
+    delete d1; // Elimino il modello: Xerox C7120
+    delete d2; // Elimino la risoluzione: XXXX
 }

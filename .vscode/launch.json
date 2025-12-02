@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/scard/Desktop/CPP_Course/2_ ESERCIZI Classi Base Mem Dinamica",
-      "program": "c:/Users/scard/Desktop/CPP_Course/2_ ESERCIZI Classi Base Mem Dinamica/build/Debug/outDebug",
+      "externalConsole": false,
+      "cwd": "/home/giammaria/Scrivania/CPP_Git/01 TIPI DI DATI E VARIABILI",
+      "program": "/home/giammaria/Scrivania/CPP_Git/01 TIPI DI DATI E VARIABILI/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

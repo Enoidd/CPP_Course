@@ -1,0 +1,33 @@
+
+
+COS'E' UNA VARIABILE 
+====================
+
+Una variabile è uno spazio di memoria, con un tipo preciso un nome e può cambiare valore nel tempo.
+
+ESEMPI:
+
+    int x = 10; // Variabile intera
+    double y = 3.14; // Variabile floating point
+
+CLASSIFICAZIONE DEI TIPI DI DATI
+================================
+
+Esistono quattro grandi macro-categorie:
+
+INTERI (signed e unsigned)
+
+tipo                    dimensione (RAM)                 range
+char                    1 byte                           -128 -> 127 oppure 0 -> 255
+short                   2 byte                           -32k -> 32k
+int                     4 byte                           -2 miliardi -> 2 miliardi
+long                    4 / 8 byte                       dipende dalla piattaforma
+long long               8 byte                           estremamente ampio
+
+
+ORDINI:
+
+sizeof(char) <= sizeof(short) <= sizeof(int) <= sizeof(long) <= sizeof(long long)
+
+
+

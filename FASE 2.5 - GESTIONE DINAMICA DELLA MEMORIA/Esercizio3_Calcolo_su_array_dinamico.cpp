@@ -28,4 +28,6 @@ int main(){
     for(int i=0; i<5; i++){
         cout<<""<<array[i]<<",";
     }
+
+    delete[] array;
 }
