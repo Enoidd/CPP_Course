@@ -16,3 +16,15 @@ Le conversioni possono essere:
     - IMPLICITE fatte dal compilatore
     - ESPLICITE quando viene usato un cast o costruttori per cambiare tipo
 
+TIPO                            Byte
+========================================
+short int                          2
+unsigned short int                 2
+unsigned int                       4 
+int                                4
+long int                           4
+signed char                        1
+usigned char                       1
+float                              4
+double                             8
+long double                       12
