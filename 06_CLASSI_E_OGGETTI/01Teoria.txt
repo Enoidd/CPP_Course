@@ -1,0 +1,259 @@
+========================================
+CLASSE
+========================================
+
+Una classe è un modello che definisce un tipo di dato personalizzato.
+
+Può contenere:
+    - Membri dati (variabili) : rappresentano lo stato (es. nome, eta)
+    - Metodi (funzioni membro) : rappresentano il comportamento (es. saluta(), calcolaEta())
+
+@@@@@@@@
+SINTASSI
+@@@@@@@@
+
+class Persona {
+    public: 
+        string nome;
+        int eta;
+
+    void saluta(){
+        cout << "Ciao, sono " << nome << endl;
+    }
+};
+
+========================================
+OGGETTI
+========================================
+
+Un oggetto è un istanza della classe e rappresenta un entità concreta
+
+@@@@@@@@
+SINTASSI
+@@@@@@@@
+
+Persona p1;
+p1.nome = "Marco";
+p1.eta = 30;
+p1.saluta(); // Output: Ciao, sono Marco
+
+========================================
+MEMBRI DATI E Metodi
+========================================
+
+Membri pubblici e privati:
+    - public: accessibili ovunque
+    - private: accessibili solo all'interno della classe
+
+SINTASSI ES:
+
+class Persona{
+    private:
+        int età;
+    
+    public: 
+        void setEtà(int e){
+            if(e>0) età = e;
+        }
+
+        in getEtà(){
+            return età;
+        }
+};
+
+========================================
+COSTRUTTORI
+========================================
+
+Funzione che ha lo stesso nome della classe e viene eseguita automaticamente alla creazione dell'oggetto.
+
+SINTASSI ES:
+
+class Persona{
+    public: 
+        string nome;
+
+        Persona(){
+            nome = "Sconosciuto";
+        }
+};
+
+@@@@@@@@@@@@@@@@@@@@@@@@@
+COSTRUTTORE CON PARAMETRI
+@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Persona(string n){
+    nome = n;
+}
+
+@@@@@@@@@@@@@@@@@@@@
+COSTRUTTORE DI COPIA
+@@@@@@@@@@@@@@@@@@@@
+
+Persona(const Persona& altra){
+    nome = altra.nome;
+}
+
+========================================
+DISTRUTTORE
+========================================
+
+Funzione preceduta da ~ e viene chiamata automaticamente quando l'oggetto viene distrutto.
+
+~Persona(){
+    cout << nome << " distrutto.\n";
+}
+
+========================================
+PUNTATORE this
+========================================
+
+Il puntatore 'this' rappresenta l'indirizzo dell'oggetto corrente. 
+E' utile per distinguere i parametri dai membri della classe o per restituire l'oggetto stesso.
+
+SINTASSI ES:
+
+class Persona{
+    private:
+        string nome;
+
+    public: 
+     Persona& setNome(string nome){
+        this->nome = nome; // distingue tra parametro e membro
+        return *this;
+     }
+};
+
+========================================
+METODI const
+========================================
+
+Se un metodo non modifica i dati dell'oggetto, deve essere dichiarato 'const'
+Questo migliora la sicurezza del codice perché non modifica lo stato interno dell'oggetto.
+
+SINTASSI ES:
+
+class Persona{
+    private:
+        string nome;
+
+    public:
+        string getNome() const{
+            return nome;     // valido: non modifica nulla
+        }
+};
+
+========================================
+OVERLOAD DEI COSTRUTTORI 
+========================================
+
+Si possono definire più costruttori con diversi parametri. Si usano quando non ci sono i set
+
+class Libro{
+    public:
+        string titolo;
+        int pagine;
+
+        Libro(){
+            titolo = "N/A"; pagine = 0;
+        }
+
+        Libro(string t, int p){
+            titolo = t;
+            pagine = p;
+        }
+};
+
+========================================
+
+DOMANDA:
+
+- Se c'è il costruttore, che senso ha usare i metodi set?
+
+Il costruttore serve per inizializzare un oggetto quando viene creato.
+I metodi set servono per modificare i valori dopo la creazione.
+
+ESEMPIO:
+
+class Persona{
+    private:   
+        string nome;
+        int età;
+    
+    public:
+        // costruttore
+        Persona(string n, int e){
+            nome = n;
+            età = e;
+        }
+
+        // metodo 'set'
+        void setEtà(int nuovaEta){
+            if(nuovaEta > 0) eta = nuovaEta;
+        }
+
+        void stampa(){
+            cout << nome << ", " << età << " anni\n";
+        }
+};
+
+int main(){
+
+    Persona p("Marco", 25); // Inizializzazione
+    p.stampa();
+
+    p.setEta(30); // modifica dopo la creazione
+    p.stampa();
+}
+
+========================================
+
+DOMANDA:
+
+-Se ho il costruttore e i set, a cosa serve il puntatore this?
+
+'this' serve quando ho nomi ambigui (es. parametro e variabile membro si chiamano uguale)
+Voglio ritornare l'oggetto stesso per chain di metodi
+Voglio accedere all'oggetto corrente dentro la classe
+
+ESEMPIO:
+
+class Persona{
+    private:
+        string nome;
+
+    public: 
+        // senza this: ambiguità
+        void setNome(string nome){
+            this->nome = nome; 
+        }
+}
+
+ESEMPIO 2 - Method chaining (ritorno *this)
+
+class Persona{
+    private: 
+        string nome;
+        int età;
+
+    public:
+        Persona& setNome(string nome){
+            this->nome = nome;
+            return *this; // ritorna l'oggetto stesso
+        }
+
+        Persona& setEta(int età){
+            this->età = età;
+            return *this;
+        }
+
+        void stampa(){
+            cout << nome << ", " << età << " anni\n";
+        }
+};
+
+int main(){
+    Persona p;
+    p.setNome("Luca").setEtà(28); // Chain di metodi
+    p.stampa();
+}
