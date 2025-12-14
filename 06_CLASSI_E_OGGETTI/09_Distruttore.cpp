@@ -16,12 +16,12 @@ class Prova{
     public:
         // Costruttore 
         Prova(){
-            cout<<"Costruttore Prova";
+            cout<<"Costruttore Prova"<<endl; // 1° ESEGUITO
         }
 
         // Distruttore
-        Prova(){
-            
+        ~Prova(){
+            cout<<"Distruttore Prova"<<endl; // 2° ESEGUITO
         }
 };
 
@@ -29,4 +29,6 @@ class Prova{
 
 int main(){
 
-}
+    Prova p;
+    
+} // 3° ESEGUITO - ESCE DALLO SCOPE

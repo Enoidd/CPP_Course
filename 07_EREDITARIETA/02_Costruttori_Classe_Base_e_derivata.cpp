@@ -47,4 +47,9 @@ int main(){
     Studente s;
     s.parla();
     s.studia();
+
+    Persona* pp = new Studente();
+
+    pp->parla(); // atteso: BlaBla - perché il metodo "parla" non è virtual e non viene ridefinito per la classe specifica.
+
 }

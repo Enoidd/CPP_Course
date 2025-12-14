@@ -1,0 +1,103 @@
+Classe base: Dispositivo
+
+Crea una classe base Dispositivo con:
+
+Attributi protected:
+
+string nome
+
+bool acceso
+
+Costruttore di default (vuoto) che inizializzi:
+
+nome = "Dispositivo generico"
+
+acceso = false
+
+Costruttore parametrico:
+
+riceve string nome
+
+Metodo virtuale:
+
+virtual void stato() const
+che stampi:
+
+nome
+
+stato acceso/spento
+
+la parola "Dispositivo"
+
+Distruttore virtuale
+
+Classi derivate
+Classe derivata: Computer
+
+Attributo:
+
+int ram
+
+Costruttore di default
+
+imposta ram = 8
+
+Costruttore parametrico
+
+riceve string nome, int ram
+
+inizializza anche la classe base
+
+Override di stato() const
+
+stampa anche la quantità di RAM
+
+la parola "Computer"
+
+Classe derivata: Smartphone
+
+Attributo:
+
+int batteria (percentuale)
+
+Costruttore di default
+
+imposta batteria = 100
+
+Costruttore parametrico
+
+riceve string nome, int batteria
+
+inizializza anche la classe base
+
+Override di stato() const
+
+stampa anche la batteria
+
+la parola "Smartphone"
+
+Funzione main
+
+Nel main():
+
+Crea SOLO con new:
+
+un Computer default
+
+un Computer parametrico
+
+uno Smartphone default
+
+uno Smartphone parametrico
+
+Inserisci tutti gli oggetti in:
+
+vector<Dispositivo*>
+
+Itera il vector usando puntatori e chiama:
+
+stato()
+
+Libera tutta la memoria con:
+
+delete
