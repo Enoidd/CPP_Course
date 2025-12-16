@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/scard/Desktop/CPP_Course/09_SMART_POINTER",
-      "program": "c:/Users/scard/Desktop/CPP_Course/09_SMART_POINTER/build/Debug/outDebug",
+      "externalConsole": false,
+      "cwd": "/home/giammaria/Scrivania/CPP_Git/10_SINGLETON",
+      "program": "/home/giammaria/Scrivania/CPP_Git/10_SINGLETON/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
