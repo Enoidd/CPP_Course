@@ -2,14 +2,52 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug (Windows) - inserimento_stampa",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}\\inserimento_stampa.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb.exe",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Debug (Linux) - outDebug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/Debug/outDebug",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/home/giammaria/Scrivania/CPP_Git/10_SINGLETON",
-      "program": "/home/giammaria/Scrivania/CPP_Git/10_SINGLETON/build/Debug/outDebug",
+      "externalConsole": true,
+      "cwd": "f:/DESKTOP/CPP_Course/001_ESERCIZI_ARRAY_VECTOR",
+      "program": "f:/DESKTOP/CPP_Course/001_ESERCIZI_ARRAY_VECTOR/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
