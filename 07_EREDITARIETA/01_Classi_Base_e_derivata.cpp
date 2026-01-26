@@ -66,7 +66,7 @@ class Studente : public Persona{
 int main(){
 
     Persona p;
-    string nome;
+    string nome;.
     cout<<"Nome: ";
     getline(cin, nome);
     p.setNome(nome);

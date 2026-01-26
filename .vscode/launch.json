@@ -46,8 +46,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "f:/DESKTOP/CPP_Course/001_ESERCIZI_ARRAY_VECTOR",
-      "program": "f:/DESKTOP/CPP_Course/001_ESERCIZI_ARRAY_VECTOR/build/Debug/outDebug",
+      "cwd": "d:/DESKTOP/CPP_Course/07_EREDITARIETA",
+      "program": "d:/DESKTOP/CPP_Course/07_EREDITARIETA/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
